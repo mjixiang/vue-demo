@@ -1,0 +1,32 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "a webpack gulp vue template",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "keywords": [
+    "vue",
+    "webpack",
+    "gulp",
+    "template"
+  ],
+  "author": "mjixiang",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^1.0.20",
+    "vue-router": "^0.7.11"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "gulp": "^3.9.1",
+    "html-loader": "^0.4.3",
+    "jsx-loader": "^0.13.2",
+    "style-loader": "^0.13.1",
+    "vinyl-named": "^1.1.0",
+    "vue-loader": "^8.2.2",
+    "webpack": "^1.12.14",
+    "webpack-stream": "^3.1.0"
+  }
+}
