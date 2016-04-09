@@ -1,5 +1,6 @@
-window.Vue = require('vue');
+var Vue = require('vue');
 var VueRouter = require('vue-router');
+var $ = require('jquery-ajax');
 
 Vue.use(VueRouter);
 
