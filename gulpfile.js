@@ -6,8 +6,7 @@ var concat = require('gulp-concat');
 var buildPath = "./dist";
 //使用webpack打包
 gulp.task("build_js",[],function(){
-    // return gulp.src(['src/index.js','src/views/**/*.js','!src/router.config.js','src/components/**/*.js'])
-    return gulp.src(['src/**/*.js','!src/router.config.js'])
+    return gulp.src(['src/**/*.js','!src/config/**'])
         .pipe(named(function(file){
             //返回路径
             return file.path.substring(0,file.path.lastIndexOf('.')).replace('\\src','');
@@ -17,13 +16,13 @@ gulp.task("build_js",[],function(){
 });
 //直接拷贝
 gulp.task("build_static", [], function(){
-   return gulp.src(["src/**/*.*","!src/**/*.css",'!src/views/**','!src/index.js','!src/components/**','!src/router.config.js'])
+   return gulp.src(["src/**/*.*","!src/**/*.css",'!src/views/**','!src/index.js','!src/components/**','!src/config/**'])
         .pipe(named())
         .pipe(gulp.dest(buildPath));
 });
-//所有css合并成1个文件
+//将src/css文件夹内的css合并成1个文件
 gulp.task("build_css", [], function(){
-   return gulp.src('src/**/*.css')
+   return gulp.src('src/css/**/*.css')
     .pipe(concat('index.css'))
     .pipe(gulp.dest(buildPath+'/css'))
 });

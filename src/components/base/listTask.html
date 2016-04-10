@@ -1,0 +1,18 @@
+<div class="listTask">
+	<div v-for="item in queryData" v-link="{path:'/servicer/detailTask?id='+item.id}" class="task">
+		<div class="task-title">
+			<div>{{ item.name }}</div>
+			<div></div>
+		</div>
+		<div>编号：{{ item.id }}</div>
+		<div>地区：{{ item.area_name }}</div>
+		<div>地址：{{ item.address }}</div>
+		<div>作物：{{ item.crops }}</div>
+		<div>面积：{{ item.area_size }}亩</div>
+		<div>时间：{{ item.appointment }}</div>
+		<div>防治：{{ item.target }}</div>
+		<div>药品：{{ item.pesticide_content }}</div>
+		<div>公司：{{ item.company_name }}</div>
+	</div>
+	<div v-show="!queryData.length" style="line-height:60px;text-align:center;color:#888;">暂无数据</div>
+</div>

@@ -1,0 +1,12 @@
+<style>
+	.user-footer-bar .v-link-active i{color:#299922;}
+	.user-footer-bar .foot-btn{height:40px;}
+	.user-footer-bar .foot-btn>i{font-size:24px;}
+</style>
+<router-view></router-view>
+<div style="height:41px;"></div>
+<div class="xa-fix-bottom xa-webkit-box user-footer-bar">
+	<div v-link="{path:'/base/info'}" class="xa-flex"><div class="xa-txt-gray xa-webkit-center foot-btn"><i class="iconfont icon-dianhua"></i></div></div>
+	<div v-link="{name:'base.list'}" class="xa-flex"><div class="xa-txt-gray xa-webkit-center foot-btn"><i class="iconfont icon-dianhua"></i></div></div>
+	<div v-link="{path:'/base/setting'}" class="xa-flex"><div class="xa-txt-gray xa-webkit-center foot-btn"><i class="iconfont icon-dianhua"></i></div></div>
+</div>
