@@ -9,6 +9,14 @@ module.exports = {
             // { test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/, loader: 'file-loader?name=./[path][name].[ext]?v=[md5:hash:base64:7]' }
         ]
     },
+    resolve: {
+        extensions: ['', '.js'],
+        alias: {
+            'views': __dirname + '/src/views',
+            'service': __dirname + '/src/service',
+            'api': __dirname + '/src/api',
+        }   
+    },
     plugins:[
         new webpack.DefinePlugin({
             DEBUG: false

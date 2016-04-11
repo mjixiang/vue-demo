@@ -6,7 +6,7 @@ var concat = require('gulp-concat');
 var buildPath = "./dist";
 //使用webpack打包
 gulp.task("build_js",[],function(){
-    return gulp.src(['src/**/*.js','!src/config/**'])
+    return gulp.src(['src/**/*.js','!src/config/**','!src/service/**'])
         .pipe(named(function(file){
             //返回路径
             return file.path.substring(0,file.path.lastIndexOf('.')).replace('\\src','');
@@ -16,7 +16,7 @@ gulp.task("build_js",[],function(){
 });
 //直接拷贝
 gulp.task("build_static", [], function(){
-   return gulp.src(["src/**/*.*","!src/**/*.css",'!src/views/**','!src/index.js','!src/components/**','!src/config/**'])
+   return gulp.src(["src/**/*.*","!src/**/*.css",'!src/views/**','!src/service/**','!src/index.js','!src/components/**','!src/config/**'])
         .pipe(named())
         .pipe(gulp.dest(buildPath));
 });

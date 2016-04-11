@@ -28,39 +28,29 @@ Router.map(routerConfig.map)
 
 //统一请求入口,需要考虑请求失败的。。
 window.Net = {
-	get:function(url,data,cb){
-		if(typeof data == 'function'){cb = data;data = {};}
+	get:function(url,data){
 		APIDEBUG && (url = './api/'+url.substring(1).replace(/\//g,'.')+'.json');
-		$.get(url,data,function(rs){
+		return $.getJSON(url,data).done(function(rs){
 			var prev = httpCodeConfig[rs.status];
 			if(prev){
 				prev.do && prev.do(rs);
-				prev.next && cb && cb(rs);
-			}else{
-				cb && cb(rs);
+				if(!prev.next){
+
+				}
 			}
-		})
+		}).promise();
 	},
-	post:function(url,data,cb){
-		if(typeof data == 'function'){cb = data;data = {};}
+	post:function(url,data){
 		APIDEBUG && (url = './api/'+url.substring(1).replace(/\//g,'.')+'.json');
-		$.post(url,data,function(rs){
+		return $.post(url,data).done(function(rs){
+			try{rs = JSON.parse(rs);}catch(e){console.log('获取的非标准json文件');}
 			var prev = httpCodeConfig[rs.status];
 			if(prev){
 				prev.do && prev.do(rs);
-				prev.next && cb && cb(rs);
-			}else{
-				cb && cb(rs);
+				if(!prev.next){
+					
+				}
 			}
-		})
-	},
-	ajax:function(option){
-		if(option.type.toLowerCase() == 'get'){
-			Net.get(option.url,option.data,option.success,option.fail);
-		}else if(option.type.toLowerCase() == 'post'){
-			Net.post(option.url,option.data,option.success,option.fail);
-		}else{
-			$.ajax(option);
-		}
+		}).promise();
 	}
 }
