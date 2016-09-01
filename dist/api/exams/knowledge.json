@@ -1,0 +1,13 @@
+{
+	"index":{
+		"status": 200,
+		"message":"您没有权限访问此页面",
+		"data": [
+		]
+	},
+	"add":{
+		"status":"200",
+		"message":"good",
+		"data":null
+	}
+}
