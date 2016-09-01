@@ -1,6 +1,0 @@
-.listTask .task{background:white;line-height:30px;margin-bottom:10px;}
-.listTask .task:active{background:#efefef;}
-.listTask .task-title{display:-webkit-box;}
-.listTask>div{padding:0 10px;}
-.listTask .task-title>div:first-child{-webkit-box-flex:1;font-weight:bold;}
-.listTask .task-title>div:last-child{width:80px;text-align:right;}
