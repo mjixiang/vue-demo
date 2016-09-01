@@ -11,7 +11,7 @@ $ npm run dev
 open  http://localhost:8080
 ```
 #site
-site：https://mjixiang.github.io/vue-demo/dist
+site：https://mjixiang.github.io/vue-demo/dist/index.html
 
 #解决问题
 ```
